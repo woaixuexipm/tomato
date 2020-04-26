@@ -1,9 +1,7 @@
 // import React from 'react';
-import logo from './logo.svg';
 import React, { Component } from 'react';
 // import Button from 'antd/es/button';
 import './App.css';
-import { Button } from 'antd';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,13 +13,15 @@ import {
 import Index from './Index/Index'
 import Login from './Login/Login'
 import SignUp from './SignUp/SignUp'
+// import history from './config/histroy'
+
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router /*history={history}*/>
         <div>
           
-            <ul>
+            {/* <ul>
               <li>
                 <Link to="/">Index</Link>
               </li>
@@ -31,7 +31,7 @@ class App extends Component {
               <li>
                 <Link to="/signup">SignUp</Link>
               </li>
-            </ul>
+            </ul> */}
           
 
           {/* A <Switch> looks through its children <Route>s and

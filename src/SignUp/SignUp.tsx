@@ -3,7 +3,8 @@ import { Input } from 'antd';
 import { Button } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import axios from "../config/axios";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {withRouter} from "react-router-dom";
 import './SignUp.css'
 interface ISignUpState { // 如果不声明会报Property 'account' does not exist on type 'Readonly<{}>'.的错误
   account: string,
@@ -43,13 +44,11 @@ class SignUp extends React.Component<any,ISignUpState>  {
                 password_confirmation 
             })
             console.log('成功')
+            this.props.history.push('/')
         }
         catch(e){
             throw new Error(e)
         }
-    }
-    Linkto = ()=>{
-        this.props.history.push('login')
     }
     public render(){
         return (
@@ -64,4 +63,4 @@ class SignUp extends React.Component<any,ISignUpState>  {
         )
     } 
 }
-export default SignUp  
+export default withRouter(SignUp) 
